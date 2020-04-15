@@ -1,0 +1,73 @@
+
+/*
+
+FD Algemeen 
+	√ Een vaste set met symbolen bepalen om mee te spelen --> final static char[] symbolen = {A, B, C, D, E, F}
+	√ Maximum aantal spelrondes instellen --> final static int maxRondes = n; 
+	√ Aantal gespeelde rondes registreren --> static int gespeeldeRondes = 0;
+	√ Ruimte met vaste lengte maken om de code in op te slaan --> static char[] code = new char[n];
+
+FD Computer genereert een code (methode)
+	√ Bepalen waar de code uit wordt opgebouwt --> char[] symbolen zoals hierboven bescheven
+	√ 1 Random nummer genereren wat gekoppeld kan worden aan een symbool --> int randNum = Random.nextInt % symbolen.lenght
+	√ op basis van het random nummer 1 random symbool printen --> System.out.println(symbolen[randNum]);
+	√ meerdere random symbolen genereren (zo als lengte van code[]) --> for loop
+		√ Deze symbolen opnemen in de code[] --> code[i] = random symbool
+
+FD Speler insert code
+	√ Vragen om user input
+	√ Scanner aanmaken
+	√ Input opvangen in string
+	√ controleren of de string dezelfde lengte heeft als de code 
+	√ controleren of de string alleen geldige caracters bevat
+	- Als de input geldig is door naar vergelijken
+		√ anders opnieuw vragen voor input
+		
+
+FD Code input speler wordt vergeleken 
+	- Na geldige input van de speler de codes vergelijken
+	√ vergelijk de eerste letter van de code en de eerste letter van de userInput --> nieuwe String voor eerste letter input. Zelfde voor code --> String.valueAtChar(index);
+	- vergelijk alle letters van de code met de letters van de userInput --> for loop
+	- Bij een geldige vergelijking terugkoppeling geven
+		- √ voor goed
+		- # voor goed maar op de verkeerde plek
+		- - voor fout
+		√ clone maken van code
+			√ is er een exacte match, dan het symbool in de match vervangen met een x en index van kloon en input vervangen met ander teken dat niet voorkomt in lijst symbolen
+					√ zo kunnen op de plek geen match meer komen 
+					√ FFFC --> F__C
+					√ CFFA --> C__A
+			√ vergelijk nu de twee overgebleven arrays om te bepalen hoeveel matches er zijn die wel voorkomen maar niet op de juiste plek staan 
+	√ Bij een geldige vergelijking een ronde registreren --> ronde--
+	√ Als het maximum aantal rondes is berijkt stoppen met spelen --> while loop
+		√ Door naar game over
+
+FD Spel instructies
+	√ Spelregels aan het begin van het spel 
+
+
+===================
+Nice to have:
+
+FD Usability 
+	- Game settings in kunnen stellen 
+	- Reset game 
+	- Nog een keer spelen
+	- Quit game 
+	
+
+FD Game over 
+	- Speler krijgt stats te zien
+		- Aantal gespeelde rondes tot game over
+		- Gewonnen of verloren 
+	- Speler wordt gevraagd of hij nog een keer wil spelen 
+	- Waarschuwing voor laatste ronde (of rondes aftellen)
+
+FD test functie 
+	- Printcode 
+		- Bij invoeren van de text 'Code' of 'Test' krijgt de gebruiker de geheime code te zien. 
+
+
+
+
+*/
